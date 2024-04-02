@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='ele.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Reports Dashboard</h1>
+        </header>
+        <section id="filters">
+            <div class="filter">
+                <label for="reportType">Report Type:</label>
+                <select id="reportType">
+                    <option value="totalMilesDriven">Total Miles Driven</option>
+                    <!-- Add more options as needed -->
+                </select>
+            </div>
+            <div class="filter">
+                <label for="frequency">Frequency:</label>
+                <select id="frequency">
+                    <option value="daily">Daily</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="monthly">Monthly</option>
+                    <option value="yearly">Yearly</option>
+                </select>
+            </div>
+            <div class="filter">
+                <label for="timeFrame">Time Frame:</label>
+                <input type="date" id="startDate">
+                <input type="date" id="endDate">
+            </div>
+            <button id="fetchData">Fetch Data</button>
+        </section>
+        <canvas id="myChart"></canvas>
+        <section id="dataContainer"></section>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
